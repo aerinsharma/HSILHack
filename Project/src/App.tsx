@@ -17,12 +17,12 @@ function App() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-blue-100 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                10-second eye scans to detect vision-threatening conditions and early signs of systemic diseases. Built for GPs and rural clinics.
+                10-second eye scans to detect vision-threatening conditions and early signs of systemic diseases. Built for individuals.
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left">
               <Link to="/demo">
                 <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition duration-150">
-                  Request Demo <ChevronRight className="ml-2 h-5 w-5" />
+                  Start Scan <ChevronRight className="ml-2 h-5 w-5" />
                 </button>
               </Link>
               </div>
@@ -77,7 +77,7 @@ function App() {
               </div>
               <h3 className="mt-4 text-lg font-medium text-gray-900">Dual-Layer AI Detection</h3>
               <p className="mt-2 text-gray-500">
-                Detects both eye diseases and systemic health risks in one scan
+                Utilises current ML models to detect eye diseases in user uploaded images
               </p>
             </div>
 
@@ -117,11 +117,8 @@ function App() {
               </p>
               <div className="mt-8 space-y-4">
                 {[
-                  'Vision-threatening eye conditions',
-                  'Diabetes complications',
-                  'Stroke risk factors',
-                  'Early dementia indicators',
-                  'Cardiovascular issues'
+                  'Glaucoma',
+                  'Cataracts'
                 ].map((item) => (
                   <div key={item} className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-blue-500" />
@@ -133,8 +130,8 @@ function App() {
             <div className="mt-10 lg:mt-0">
               <img
                 className="rounded-lg shadow-xl"
-                src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80"
-                alt="Doctor examining results"
+                src="../resources/smartphone-eyepic.jpg"
+                alt="Doctor scanning eye with phone"
               />
             </div>
           </div>
@@ -145,15 +142,15 @@ function App() {
       <div className="bg-blue-700">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            <span className="block">Ready to transform healthcare delivery?</span>
+            <span className="block">Ready to try a free eye scan?</span>
             <span className="block text-blue-200 text-lg mt-3">
-              Join our pilot program for rural clinics
+            Fast, non-invasive, and free to try — take the first step toward protecting your vision today.
             </span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
               <button className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50">
-                Get Started
+                Start Scan
               </button>
             </div>
           </div>
