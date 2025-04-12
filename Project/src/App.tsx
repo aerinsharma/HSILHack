@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Eye, Activity, Brain, MapPin, Shield, Smartphone, Users, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
                 10-second eye scans to detect vision-threatening conditions and early signs of systemic diseases. Built for GPs and rural clinics.
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left">
+              <Link to="/demo">
                 <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition duration-150">
                   Request Demo <ChevronRight className="ml-2 h-5 w-5" />
                 </button>
+              </Link>
               </div>
             </div>
             <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
