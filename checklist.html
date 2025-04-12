@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Eye Symptoms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .info-icon {
+      display: inline-block;
+      margin-left: 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 16px;
+      cursor: pointer;
+      position: relative;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 4px;
+      top: 20px;
+      left: 0;
+      font-size: 12px;
+      white-space: nowrap;
+      z-index: 10;
+    }
+    .info-icon:hover .tooltip {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>Select all that apply</h2>
+  <form id="symptomsForm">
+    <div class="checkbox-group">
+      <label><input type="checkbox" value="Red eye">Red eye</label>
+      <label><input type="checkbox" value="Visual impairment">Visual impairment</label>
+      <label><input type="checkbox" value="Pain around or behind eye">Pain around or behind eye</label>
+      <label><input type="checkbox" value="Watery eyes">Watery eyes</label>
+      <label><input type="checkbox" value="Itchy eye">Itchy eye</label>
+      <label>
+        <input type="checkbox" value="Light sensitivity">Light sensitivity
+        <span class="info-icon">i
+          <span class="tooltip">Increased sensitivity to light</span>
+        </span>
+      </label>
+      <label><input type="checkbox" value="White spot on clear part of eye">White spot on clear part of eye</label>
+      <label><input type="checkbox" value="Skin changes">Skin changes</label>
+      <label><input type="checkbox" id="noneOption" value="None of the above">None of the above</label>
+    </div>
+  </form>
+
+  <script>
+    const form = document.getElementById('symptomsForm');
+    const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+    const noneCheckbox = document.getElementById('noneOption');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox === noneCheckbox && checkbox.checked) {
+          checkboxes.forEach(cb => {
+            if (cb !== noneCheckbox) cb.checked = false;
+          });
+        } else if (checkbox !== noneCheckbox && checkbox.checked) {
+          noneCheckbox.checked = false;
+        }
+      });
+    });
+
+    // Example to retrieve selected values
+    function getSelectedSymptoms() {
+      const selected = [];
+      checkboxes.forEach(cb => {
+        if (cb.checked) selected.push(cb.value);
+      });
+      return selected;
+    }
+  </script>
+</body>
+</html>
